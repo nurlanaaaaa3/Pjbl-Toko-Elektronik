@@ -25,6 +25,9 @@
         <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Toko Elektronik
     </a>
     <div class="d-flex gap-3 align-items-center">
+        <a href="{{ route('shop.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-store"></i> Admin
+        </a>
         <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
             <i class="fas fa-shopping-cart"></i> Cart
         </a>

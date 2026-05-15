@@ -30,10 +30,16 @@
         <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
             <i class="fas fa-shopping-cart"></i> Cart
         </a>
-        @auth
-        <a href="{{ route('dashboard') }}" class="text-white text-decoration-none">
-            <i class="fas fa-user"></i> {{ auth()->user()->name }}
+        <a href="{{ route('order.history') }}" class="text-white text-decoration-none">
+            <i class="fas fa-list"></i> Pesanan
         </a>
+        <a href="{{ route('admin.products.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-cog"></i> Admin
+        </a>
+        @auth
+        <span class="text-white">
+            <i class="fas fa-user"></i> {{ auth()->user()->name }}
+        </span>
         @else
         <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
         @endauth

@@ -65,7 +65,10 @@
             <i class="fas fa-store"></i> Toko
         </a>
         <a href="{{ route('cart.index') }}" class="{{ request()->routeIs('cart.*') ? 'active' : '' }}">
-            <i class="fas fa-cart-shopping"></i> Cart
+            <i class="fas fa-shopping-cart"></i> Cart
+        </a>
+        <a href="{{ route('order.history') }}" class="{{ request()->routeIs('order.*') ? 'active' : '' }}">
+            <i class="fas fa-clipboard-list"></i> Riwayat Pesanan
         </a>
     </div>
     <div style="padding: 20px; border-top: 1px solid #d1d5db;">
@@ -81,10 +84,30 @@
 <div class="main-content">
     <div class="topbar">
         <div class="topbar-title">Admin Toko Elektronik</div>
-        <div class="topbar-user">
-            <i class="fas fa-user-circle fa-lg"></i>
-            {{ auth()->user()->name }}
-        </div>
+       <div class="topbar-user dropdown">
+    <a href="#" class="dropdown-toggle text-decoration-none text-secondary d-flex align-items-center gap-2" 
+       data-bs-toggle="dropdown">
+        <i class="fas fa-user-circle fa-lg"></i>
+        {{ auth()->user()->name }}
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end">
+        <li><h6 class="dropdown-header">Admin Toko Elektronik</h6></li>
+        <li><hr class="dropdown-divider"></li>
+        <li>
+            <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                <i class="fas fa-user me-2"></i> Profile
+            </a>
+        </li>
+        <li>
+            <form method="POST" action="{{ route('logout') }}">
+                @csrf
+                <button type="submit" class="dropdown-item text-danger">
+                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                </button>
+            </form>
+        </li>
+    </ul>
+</div>
     </div>
     <div class="content-area">
         @if(session('success'))

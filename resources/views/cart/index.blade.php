@@ -24,12 +24,15 @@
         <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Toko Elektronik
     </a>
     <div class="d-flex gap-3 align-items-center">
-        <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-shopping-cart"></i> Cart ({{ $carts->count() }})
+        <a href="{{ route('shop.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-store"></i> Toko
         </a>
-        <a href="{{ route('dashboard') }}" class="text-white text-decoration-none">
+        <a href="{{ route('admin.products.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-cog"></i> Admin
+        </a>
+        <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
-        </a>
+        </span>
     </div>
 </nav>
 
@@ -91,7 +94,7 @@
                 <a href="{{ route('shop.index') }}" class="btn btn-outline-dark w-100 mt-3 rounded-pill">
                     Lanjut Belanja
                 </a>
-                <a href="#" class="btn btn-dark w-100 mt-2 rounded-pill">
+                <a href="{{ route('order.checkout') }}" class="btn btn-dark w-100 mt-2 rounded-pill">
                     <i class="fas fa-credit-card me-2"></i>Checkout
                 </a>
             </div>

@@ -15,14 +15,8 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
-                        {{ __('Kategori') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
-                        {{ __('Produk') }}
-                    </x-nav-link>
-                    <x-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.*')">
-                        {{ __('Profile') }}
+                    <x-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.*')">
+                        {{ __('Admin') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -77,14 +71,8 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.categories.index')" :active="request()->routeIs('admin.categories.*')">
-                {{ __('Kategori') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.products.*')">
-                {{ __('Produk') }}
-            </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('profile.edit')" :active="request()->routeIs('profile.*')">
-                {{ __('Profile') }}
+            <x-responsive-nav-link :href="route('admin.products.index')" :active="request()->routeIs('admin.*')">
+                {{ __('Admin') }}
             </x-responsive-nav-link>
         </div>
 
