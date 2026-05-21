@@ -27,21 +27,23 @@
         <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Toko Elektronik
     </a>
     <div class="d-flex gap-3 align-items-center">
-        <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-shopping-cart"></i> Cart
-        </a>
+        @auth
         <a href="{{ route('order.history') }}" class="text-white text-decoration-none">
             <i class="fas fa-list"></i> Pesanan
         </a>
-        <a href="{{ route('admin.products.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-cog"></i> Admin
+        <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-shopping-cart"></i> Keranjang
         </a>
-        @auth
         <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
         </span>
+        <form method="POST" action="{{ route('logout') }}" class="d-inline">
+            @csrf
+            <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
+        </form>
         @else
         <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
+        <a href="{{ route('register') }}" class="text-white text-decoration-none">Register</a>
         @endauth
     </div>
 </nav>
@@ -76,7 +78,11 @@
         @forelse($products as $product)
         <div class="col-md-3">
             <div class="card product-card h-100">
-                <img src="{{ Storage::url($product->image) }}" alt="{{ $product->title }}">
+                @if($product->image)
+                    <img src="{{ Storage::url($product->image) }}" alt="{{ $product->title }}">
+                @else
+                    <img src="https://via.placeholder.com/400x200?text=No+Image" alt="No Image">
+                @endif
                 <div class="card-body">
                     <span class="badge badge-kategori mb-2">{{ $product->category->name }}</span>
                     <h6 class="card-title">{{ $product->title }}</h6>
@@ -98,7 +104,7 @@
         @empty
         <div class="col-12 text-center py-5">
             <i class="fas fa-box-open fa-3x text-muted mb-3"></i>
-            <p class="text-muted">Produk tidak ditemukan</p>
+            <p class="text-muted">Produk Tidak Ditemukan</p>
         </div>
         @endforelse
     </div>

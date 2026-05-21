@@ -27,9 +27,6 @@
         <a href="{{ route('shop.index') }}" class="text-white text-decoration-none">
             <i class="fas fa-store"></i> Toko
         </a>
-        <a href="{{ route('admin.products.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-cog"></i> Admin
-        </a>
         <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
         </span>

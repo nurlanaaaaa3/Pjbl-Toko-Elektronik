@@ -1,7 +1,8 @@
 <x-guest-layout>
     <div class="text-center mb -6">
         <h1 class="text-2x1 font-bold text-gray-800"> Toko Elektronik </h1>
-        <p class="text-sm text-gray-500 mt-1"> Silahkan login untuk melanjutkan</p>
+        <p class="text-sm text-gray-500 mt-1"> Selamat Datang Sebagai Admin <br>
+            Silahkan Login Untuk Mengelola Toko Elektronik </p>
     </div>
 
     <x-auth-session-status class="mb-4" :status="session('status')" />

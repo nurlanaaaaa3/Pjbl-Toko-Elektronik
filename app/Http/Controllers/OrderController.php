@@ -12,7 +12,7 @@ class OrderController extends Controller
     public function checkout()
     {
         $carts = Cart::with('product')->where('user_id', auth()->id())->get();
-        
+
         if ($carts->isEmpty()) {
             return redirect()->route('cart.index')->with('error', 'Cart kosong!');
         }
@@ -76,7 +76,30 @@ class OrderController extends Controller
 
     public function history()
     {
-        $orders = Order::with('items.product')->where('user_id', auth()->id())->latest()->get();
+        $orders = Order::with('items.product')
+            ->where('user_id', auth()->id())
+            ->latest()
+            ->get();
         return view('order.history', compact('orders'));
+    }
+
+    public function adminIndex()
+    {
+        $orders = Order::with(['items.product', 'user'])
+            ->latest()
+            ->get();
+        return view('admin.orders.index', compact('orders'));
+    }
+
+    // Update status pesanan
+    public function updateStatus(Request $request, Order $order)
+    {
+        $request->validate([
+            'status' => 'required|in:pending,proses,selesai,dibatalkan',
+        ]);
+
+        $order->update(['status' => $request->status]);
+
+        return back()->with('success', 'Status pesanan #' . $order->id . ' berhasil diperbarui!');
     }
 }

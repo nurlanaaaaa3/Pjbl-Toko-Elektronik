@@ -26,17 +26,22 @@
     </a>
     <div class="d-flex gap-3 align-items-center">
         <a href="{{ route('shop.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-store"></i> Admin
-        </a>
-        <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
-            <i class="fas fa-shopping-cart"></i> Cart
+            <i class="fas fa-store"></i> Toko
         </a>
         @auth
-        <a href="{{ route('dashboard') }}" class="text-white text-decoration-none">
-            <i class="fas fa-user"></i> {{ auth()->user()->name }}
+        <a href="{{ route('order.history') }}" class="text-white text-decoration-none">
+            <i class="fas fa-box"></i> Pesanan
         </a>
+        <span class="text-white">
+            <i class="fas fa-user"></i> {{ auth()->user()->name }}
+        </span>
+        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+            @csrf
+            <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
+        </form>
         @else
         <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
+        <a href="{{ route('register') }}" class="text-white text-decoration-none">Register</a>
         @endauth
     </div>
 </nav>
@@ -46,10 +51,18 @@
         <i class="fas fa-arrow-left me-1"></i> Kembali
     </a>
 
+    @if(session('success'))
+        <div class="alert alert-success">{{ session('success') }}</div>
+    @endif
+
     <div class="card p-4">
         <div class="row">
             <div class="col-md-5">
-                <img src="{{ Storage::url($product->image) }}" class="product-img" alt="{{ $product->title }}">
+                @if($product->image)
+                    <img src="{{ Storage::url($product->image) }}" class="product-img" alt="{{ $product->title }}">
+                @else
+                    <img src="https://via.placeholder.com/400x400?text=No+Image" class="product-img" alt="No Image">
+                @endif
             </div>
             <div class="col-md-7">
                 <span class="badge badge-kategori mb-2">{{ $product->category->name }}</span>
@@ -71,6 +84,7 @@
                 <h6 class="fw-bold">Deskripsi Produk</h6>
                 <p class="text-muted">{{ $product->description }}</p>
 
+                @auth
                 <form action="{{ route('cart.add') }}" method="POST" class="mt-3">
                     @csrf
                     <input type="hidden" name="product_id" value="{{ $product->id }}">
@@ -82,6 +96,11 @@
                         <i class="fas fa-shopping-cart me-2"></i> Tambah ke Cart
                     </button>
                 </form>
+                @else
+                <div class="alert alert-warning mt-3">
+                    <a href="{{ route('login') }}">Login</a> terlebih dahulu untuk menambah ke cart.
+                </div>
+                @endauth
             </div>
         </div>
     </div>

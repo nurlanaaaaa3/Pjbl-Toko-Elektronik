@@ -21,11 +21,11 @@ class ShopController extends Controller
             })
             ->get();
 
-        return view('shop.index', compact('products', 'categories'));
+        return view('user.shop2.index', compact('products', 'categories'));
     }
 
     public function show(Product $product)
     {
-        return view('shop.show', compact('product'));
+        return view('user.shop2.show', compact('product'));
     }
 }
