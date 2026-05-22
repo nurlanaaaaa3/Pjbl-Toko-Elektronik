@@ -40,7 +40,8 @@
                     </div>
                 @endif
 
-                <form method="POST" action="{{ route('register.post') }}">
+                {{-- ✅ Ganti ke user.register.post --}}
+                <form method="POST" action="{{ route('user.register.post') }}">
                     @csrf
                     <div class="mb-3">
                         <label class="form-label fw-bold">Nama</label>
@@ -66,7 +67,8 @@
                 <hr>
                 <div class="text-center">
                     <p class="text-muted mb-1">Sudah Punya Akun?</p>
-                    <a href="{{ route('login') }}" class="btn btn-outline-dark rounded-pill px-4">Login</a>
+                    {{-- ✅ Ganti ke user.login --}}
+                    <a href="{{ route('user.login') }}" class="btn btn-outline-dark rounded-pill px-4">Login</a>
                 </div>
             </div>
 

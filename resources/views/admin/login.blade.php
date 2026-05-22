@@ -35,7 +35,8 @@
         </div>
 
         <div class="flex items-center justify-between mt-4">
-            <a href="{{ route('login') }}" class="underline text-sm text-gray-600 hover:text-gray-900">
+            {{-- ✅ Ganti route('login') → route('user.login') --}}
+            <a href="{{ route('user.login') }}" class="underline text-sm text-gray-600 hover:text-gray-900">
                 Login sebagai User
             </a>
             <x-primary-button class="ms-3">

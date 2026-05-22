@@ -61,6 +61,11 @@
         <a href="{{ route('admin.orders.index') }}" class="{{ request()->routeIs('admin.orders.*') ? 'active' : '' }}">
             <i class="fas fa-clipboard-list"></i> Semua Pesanan
         </a>
+
+        {{-- ✅ Tambah Profile --}}
+        <a href="{{ route('profile.edit') }}" class="{{ request()->routeIs('profile.*') ? 'active' : '' }}">
+            <i class="fas fa-user"></i> Profile
+        </a>
     </div>
 
     <div style="padding: 20px; border-top: 1px solid #d1d5db;">
@@ -85,6 +90,11 @@
             <ul class="dropdown-menu dropdown-menu-end">
                 <li><h6 class="dropdown-header">{{ auth()->user()->email }}</h6></li>
                 <li><hr class="dropdown-divider"></li>
+                <li>
+                    <a class="dropdown-item" href="{{ route('profile.edit') }}">
+                        <i class="fas fa-user me-2"></i> Profile
+                    </a>
+                </li>
                 <li>
                     <form method="POST" action="{{ route('admin.logout') }}">
                         @csrf

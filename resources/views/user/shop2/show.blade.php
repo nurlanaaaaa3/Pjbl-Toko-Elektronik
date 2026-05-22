@@ -35,13 +35,15 @@
         <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
         </span>
-        <form action="{{ route('logout') }}" method="POST" class="d-inline">
+        {{-- ✅ Ganti ke user.logout --}}
+        <form action="{{ route('user.logout') }}" method="POST" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
         </form>
         @else
-        <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
-        <a href="{{ route('register') }}" class="text-white text-decoration-none">Register</a>
+        {{-- ✅ Ganti ke user.login dan user.register --}}
+        <a href="{{ route('user.login') }}" class="text-white text-decoration-none">Login</a>
+        <a href="{{ route('user.register') }}" class="text-white text-decoration-none">Register</a>
         @endauth
     </div>
 </nav>
@@ -97,8 +99,9 @@
                     </button>
                 </form>
                 @else
+                {{-- ✅ Ganti ke user.login --}}
                 <div class="alert alert-warning mt-3">
-                    <a href="{{ route('login') }}">Login</a> terlebih dahulu untuk menambah ke cart.
+                    <a href="{{ route('user.login') }}">Login</a> terlebih dahulu untuk menambah ke cart.
                 </div>
                 @endauth
             </div>
