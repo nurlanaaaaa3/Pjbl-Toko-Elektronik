@@ -32,11 +32,10 @@
                     </x-slot>
 
                     <x-slot name="content">
-                        <x-dropdown-link :href="route('profile.edit')">
+                        <x-dropdown-link :href="route('admin.profile')">
                             {{ __('Profile') }}
                         </x-dropdown-link>
 
-                        {{-- ✅ Ganti ke admin.logout --}}
                         <form method="POST" action="{{ route('admin.logout') }}">
                             @csrf
                             <x-dropdown-link :href="route('admin.logout')"
@@ -77,11 +76,10 @@
             </div>
 
             <div class="mt-3 space-y-1">
-                <x-responsive-nav-link :href="route('profile.edit')">
+                <x-responsive-nav-link :href="route('admin.profile')">
                     {{ __('Profile') }}
                 </x-responsive-nav-link>
 
-                {{-- ✅ Ganti ke admin.logout --}}
                 <form method="POST" action="{{ route('admin.logout') }}">
                     @csrf
                     <x-responsive-nav-link :href="route('admin.logout')"

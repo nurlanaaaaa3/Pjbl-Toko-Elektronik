@@ -29,21 +29,22 @@
             <i class="fas fa-store"></i> Toko
         </a>
         @auth
+        <a href="{{ route('cart.index') }}" class="text-white text-decoration-none">
+            <i class="fas fa-shopping-cart"></i> Cart
+        </a>
         <a href="{{ route('order.history') }}" class="text-white text-decoration-none">
             <i class="fas fa-box"></i> Pesanan
         </a>
         <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
         </span>
-        {{-- ✅ Ganti ke user.logout --}}
-        <form action="{{ route('user.logout') }}" method="POST" class="d-inline">
+        <form action="{{ route('logout') }}" method="POST" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
         </form>
         @else
-        {{-- ✅ Ganti ke user.login dan user.register --}}
-        <a href="{{ route('user.login') }}" class="text-white text-decoration-none">Login</a>
-        <a href="{{ route('user.register') }}" class="text-white text-decoration-none">Register</a>
+        <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
+        <a href="{{ route('register') }}" class="text-white text-decoration-none">Register</a>
         @endauth
     </div>
 </nav>
@@ -99,9 +100,8 @@
                     </button>
                 </form>
                 @else
-                {{-- ✅ Ganti ke user.login --}}
                 <div class="alert alert-warning mt-3">
-                    <a href="{{ route('user.login') }}">Login</a> terlebih dahulu untuk menambah ke cart.
+                    <a href="{{ route('login') }}">Login</a> terlebih dahulu untuk menambah ke cart.
                 </div>
                 @endauth
             </div>

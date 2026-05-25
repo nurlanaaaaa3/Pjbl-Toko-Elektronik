@@ -25,12 +25,22 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
+        $slug = Str::slug($request->name);
+        $originalSlug = $slug;
+        $count = 1;
+
+        while (Category::where('slug', $slug)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+
         Category::create([
             'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'slug' => $slug,
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil ditambahkan!');
+        return redirect()->route('admin.categories.index')
+            ->with('success', 'Kategori berhasil ditambahkan!');
     }
 
     public function edit(Category $category)
@@ -44,17 +54,28 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
         ]);
 
+        $slug = Str::slug($request->name);
+        $originalSlug = $slug;
+        $count = 1;
+
+        while (Category::where('slug', $slug)->where('id', '!=', $category->id)->exists()) {
+            $slug = $originalSlug . '-' . $count;
+            $count++;
+        }
+
         $category->update([
             'name' => $request->name,
-            'slug' => Str::slug($request->name),
+            'slug' => $slug,
         ]);
 
-        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil diupdate!');
+        return redirect()->route('admin.categories.index')
+            ->with('success', 'Kategori berhasil diupdate!');
     }
 
     public function destroy(Category $category)
     {
         $category->delete();
-        return redirect()->route('admin.categories.index')->with('success', 'Kategori berhasil dihapus!');
+        return redirect()->route('admin.categories.index')
+            ->with('success', 'Kategori berhasil dihapus!');
     }
 }

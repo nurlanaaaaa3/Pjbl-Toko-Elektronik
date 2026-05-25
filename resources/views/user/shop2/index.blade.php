@@ -37,15 +37,13 @@
         <span class="text-white">
             <i class="fas fa-user"></i> {{ auth()->user()->name }}
         </span>
-        {{-- ✅ Ganti ke user.logout --}}
-        <form method="POST" action="{{ route('user.logout') }}" class="d-inline">
+        <form method="POST" action="{{ route('logout') }}" class="d-inline">
             @csrf
             <button type="submit" class="btn btn-sm btn-outline-light">Logout</button>
         </form>
         @else
-        {{-- ✅ Ganti ke user.login dan user.register --}}
-        <a href="{{ route('user.login') }}" class="text-white text-decoration-none">Login</a>
-        <a href="{{ route('user.register') }}" class="text-white text-decoration-none">Register</a>
+        <a href="{{ route('login') }}" class="text-white text-decoration-none">Login</a>
+        <a href="{{ route('register') }}" class="text-white text-decoration-none">Register</a>
         @endauth
     </div>
 </nav>
