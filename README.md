@@ -1,10 +1,15 @@
 # Toko Elektronik
 
-Aplikasi web toko elektronik berbasis Laravel.
-Digunakan untuk jual beli produk elektronik secara online.
-Aplikasi ini memiliki dua peran yaitu User dan Admin.
+# Fitur Website Toko Elektronik
+Website Toko Elektronik berbasis Laravel ini memiliki berbagai fitur yang membantu proses penjualan produk elektronik secara online. Sistem dibuat agar memudahkan user dalam melakukan pembeli produk dan memudahkan admin dalam mengelola data toko.
+
+
+# Kelebihan Website
+Website Toko Elektronik berbasis Laravel ini memiliki beberapa kelebihan, yaitu memudahkan user dalam membeli produk secara online tanpa harus datang ke toko, proses transaksi menjadi lebih cepat dan praktis, serta data tersimpan otomatis di database sehingga lebih aman dan terorganisir. Selain itu, admin juga lebih mudah dalam mengelola produk, kategori, dan pesanan melalui dashboard. Website ini juga sudah responsive sehingga bisa diakses di berbagai perangkat, serta menggunakan Laravel yang membuat sistem lebih rapi, aman, dan mudah dikembangkan kembali di masa depan.
+
 
 ---
+
 
 ## Screenshot Halaman user
 
@@ -107,3 +112,6 @@ menyimpan detail produk dalam setiap transaksi pesanan.
 ### Tabel Carts
 menyimpan data produk yang ada di keranjang user sebelum checkout.
 ![Tabel Carts](screenshots/db-carts.png)
+
+# Kesimpulan
+Website Toko Elektronik berbasis Laravel ini dibuat untuk mempermudah proses penjualan produk elektronik secara online agar lebih cepat, praktis, dan efisien. Dengan adanya sistem ini, user dapat dengan mudah melihat produk, mencari barang, melihat detail produk, menambahkan ke keranjang, hingga melakukan checkout tanpa harus datang langsung ke toko. Selain itu, user juga dapat melihat riwayat pesanan sehingga setiap transaksi dapat dipantau dengan lebih jelas. Di sisi lain, admin juga sangat terbantu karena seluruh pengelolaan data dilakukan melalui sistem. Admin dapat mengelola produk, kategori, serta memantau semua pesanan user dengan lebih mudah melalui dashboard. Hal ini membuat proses pengelolaan toko menjadi lebih terstruktur dan tidak lagi dilakukan secara manual. Secara keseluruhan, sistem ini memberikan solusi yang lebih modern dalam proses jual beli produk elektronik. Dengan menggunakan Laravel dan database MySQL, website ini menjadi lebih aman, rapi, dan mudah dikembangkan kembali di masa depan jika diperlukan penambahan fitur baru.
