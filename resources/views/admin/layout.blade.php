@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Toko Elektronik</title>
+    <title>Admin Elextron</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -46,7 +46,7 @@
 <div class="sidebar">
     <div class="sidebar-brand">
         <i class="fas fa-bolt me-2" style="color:#6b7280"></i>
-        Toko Elektronik
+        Elextron
     </div>
     <div class="sidebar-menu">
         <a href="{{ route('dashboard') }}" class="{{ request()->routeIs('dashboard') ? 'active' : '' }}">
@@ -78,7 +78,7 @@
 
 <div class="main-content">
     <div class="topbar">
-        <div class="topbar-title">Admin Toko Elektronik</div>
+        <div class="topbar-title">Admin Elextron</div>
         <div class="topbar-user dropdown">
             <a href="#" class="dropdown-toggle text-decoration-none text-secondary d-flex align-items-center gap-2"
                data-bs-toggle="dropdown">

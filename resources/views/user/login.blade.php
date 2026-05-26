@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - Toko Elektronik</title>
+    <title>Login - Elextron</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -21,7 +21,7 @@
         <div class="col-md-4">
             <div class="text-center mb-4">
                 <i class="fas fa-bolt fa-2x" style="color:#e83e8c"></i>
-                <div class="brand mt-2">Toko Elektronik</div>
+                <div class="brand mt-2">Elextron</div>
                 <p class="text-muted">Selamat Datang Sebagai Pelanggan<br>
                     Silahkan Login Untuk Mulai Belanja
                 </p>

@@ -27,13 +27,17 @@ class UserAuthController extends Controller
 
             if (Auth::user()->role === 'admin') {
                 Auth::logout();
-                return back()->with('error', 'Akun admin harus login melalui halaman admin.');
+                return back()->withErrors([
+                    'email' => 'Akun admin harus login melalui halaman admin.',
+                ])->onlyInput('email');
             }
 
             return redirect()->route('shop.index');
         }
 
-        return back()->with('error', 'Email atau password salah!');
+        return back()->withErrors([
+            'email' => 'Email atau password salah!',
+        ])->onlyInput('email');
     }
 
     // ===== ADMIN LOGIN =====
@@ -54,13 +58,17 @@ class UserAuthController extends Controller
 
             if (Auth::user()->role !== 'admin') {
                 Auth::logout();
-                return back()->with('error', 'Anda tidak memiliki akses admin.');
+                return back()->withErrors([
+                    'email' => 'Anda tidak memiliki akses admin.',
+                ])->onlyInput('email');
             }
 
             return redirect()->route('dashboard');
         }
 
-        return back()->with('error', 'Email atau password salah!');
+        return back()->withErrors([
+            'email' => 'Email atau password salah!',
+        ])->onlyInput('email');
     }
 
     // ===== REGISTER =====
@@ -84,8 +92,7 @@ class UserAuthController extends Controller
             'role'     => 'user',
         ]);
 
-        // ✅ Ganti ke user.login
-        return redirect()->route('user.login')
+        return redirect()->route('login')
             ->with('success', 'Akun berhasil dibuat! Silakan login.');
     }
 
@@ -96,8 +103,7 @@ class UserAuthController extends Controller
         $request->session()->invalidate();
         $request->session()->regenerateToken();
 
-        // ✅ Ganti ke user.login
-        return redirect()->route('user.login');
+        return redirect()->route('login');
     }
 
     // ===== ADMIN LOGOUT =====

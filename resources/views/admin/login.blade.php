@@ -1,6 +1,6 @@
 <x-guest-layout>
     <div class="text-center mb-6">
-        <h1 class="text-2xl font-bold text-gray-800">Toko Elektronik</h1>
+        <h1 class="text-2xl font-bold text-gray-800">Elextron</h1>
         <p class="text-sm text-gray-500 mt-1">Selamat Datang Sebagai Admin</p>
         <p class="text-sm text-gray-500">Silahkan Login Untuk Mengelola Toko</p>
     </div>
@@ -35,8 +35,7 @@
         </div>
 
         <div class="flex items-center justify-between mt-4">
-            {{-- ✅ Ganti route('login') → route('user.login') --}}
-            <a href="{{ route('user.login') }}" class="underline text-sm text-gray-600 hover:text-gray-900">
+            <a href="{{ route('login') }}" class="underline text-sm text-gray-600 hover:text-gray-900">
                 Login sebagai User
             </a>
             <x-primary-button class="ms-3">

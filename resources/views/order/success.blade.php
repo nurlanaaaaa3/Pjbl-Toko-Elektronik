@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pesanan Berhasil - Toko Elektronik</title>
+    <title>Pesanan Berhasil - Elextron</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-dark px-4 py-3">
         <a class="navbar-brand fw-bold" href="{{ route('shop.index') }}">
-        <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Toko Elektronik
+        <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Elextron
         </a>
         <div class="d-flex gap-3 align-items-center">
             <a href="{{ route('shop.index') }}" class="text-white text-decoration-none">
@@ -36,7 +36,7 @@
             <div class="card p-5 text-center">
                 <i class="fas fa-check-circle success-icon mb-3"></i>
                 <h4 class="fw-bold">Pesanan Berhasil Dibuat!</h4>
-                <p class="text-muted">Terima kasih telah berbelanja di Toko Elektronik</p>
+                <p class="text-muted">Terima kasih telah berbelanja di Elextron</p>
 
                 <div class="bg-light rounded p-3 mb-4 text-start">
                     <div class="d-flex justify-content-between mb-2">

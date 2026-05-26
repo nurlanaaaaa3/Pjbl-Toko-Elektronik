@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Checkout - Toko Elektronik</title>
+    <title>Checkout - Elextron</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <style>
@@ -20,7 +20,7 @@
 
 <nav class="navbar navbar-dark px-4 py-3">
     <a class="navbar-brand fw-bold" href="{{ route('shop.index') }}">
-        <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Toko Elektronik
+        <i class="fas fa-bolt me-2" style="color:#e83e8c"></i>Elextron
     </a>
 </nav>
 
